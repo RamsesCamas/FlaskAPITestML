@@ -22,7 +22,10 @@ def process_sentence():
 
     for sentence in list_of_sentences:
         doc = nlp(sentence)
-        #dictionary comprehension para iterar por todas las entidades encontradas
+        """
+        Dictionary comprenhension para iterar por todas las entidades, obtener su texto y 
+        su etiqueta.
+        """
         entities = {ent.text:ent.label_ for ent in doc.ents}
         if len(entities) == 0:
             entities = "Entidades no encontradas"
